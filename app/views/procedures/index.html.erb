@@ -1,9 +1,18 @@
-<div class="procedure-container">
-	<h1>Procedures</h1>
-	<% @procedures.each do |procedure| %>
-	<div class="procedure-wrapper">
-	<p><%= procedure.body %></p>
-	<small><%= procedure.created_at.strftime('%B %d %Y') %></small>
+<div class="procedures">
+	<h1><%= @experiment.procedures.count %> Procedures :</h1>
+
+	<div class="procedure-container">
+		
+		<% @procedures.each do |procedure| %>
+		<div class="procedure-wrapper">
+		<p><%= procedure.body %></p>
+		<small><%= procedure.created_at.strftime('%B %d %Y') %></small>
+		<small><%= procedure.username %></small>
+		</div>
+		<% end %>
 	</div>
-	<% end %>
+	<h3>Add a Procedure:</h3>
+		<%= render 'procedures/form' %>
 </div>
+	<!-- add comments section -->
+

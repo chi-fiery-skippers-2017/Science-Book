@@ -1,1 +1,17 @@
-_form.html.erb
+<div class="procedure-wrapper">
+  <%= form_for([@experiment, @experiment.procedures.build]) do |f| %>
+    <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+
+    <p>
+    	<%= f.label :username %>
+    	<%= f.text_field :username %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>

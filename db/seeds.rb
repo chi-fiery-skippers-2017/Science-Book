@@ -17,7 +17,9 @@ user_count.times do
 end
 
 proposal_count.times do
+
   Proposal.create!(title: Faker::Hipster.word, summary: Faker::Hipster.paragraph, hypothesis: Faker::Hacker.say_something_smart, user_id: rand(1..user_count))
+
 end
 
 experiment_count.times do
