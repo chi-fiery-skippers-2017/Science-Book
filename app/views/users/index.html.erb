@@ -1,0 +1,14 @@
+<% if User.any? %>
+  <ul>
+    <% User.all.each  do |user| %>
+      <li>
+      <%= link_to user.username, edit_user_path(user.id)%>
+      <%= render "/users/destroy", user: user %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div>
+    <h3>Sorry, no users created. <%= link_to "Add one!", new_user_path %></h3>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= @proposal.title %></h1>
+<h2><%= @proposal.hypothesis %></h2>
+<p><%= @proposal.created_at %></p>
+<p><%= @proposal.summary %></p>
+<%= link_to "Edit", edit_proposal_path(@proposal) %>
+<%= link_to "Back to proposals", proposals_path%>

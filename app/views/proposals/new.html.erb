@@ -1,0 +1,22 @@
+<%= render "shared/errors", object: @proposal  %>
+
+<%= form_for :proposal, url: proposals_path do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </p>
+
+  <p>
+    <%= f.label :summary %>
+    <%= f.text_area :summary %>
+  </p>
+
+  <p>
+    <%= f.label :hypothesis %>
+    <%= f.text_area :hypothesis %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

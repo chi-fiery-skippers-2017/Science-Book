@@ -1,0 +1,11 @@
+<div class="experiment-container">
+	<h1>Experiments</h1>
+	<% @experiments.each do |experiment| %>
+		<div class="experiment-wrapper">
+			<h3><%= link_to experiment.title, experiment %></h3>
+			<small><%= experiment.created_at.strftime('%B %d %Y') %></small>
+		</div>
+		<% end %>
+		<hv>
+		<button class="button"><%= link_to 'New Experiment', new_experiment_path %></button>
+</div>

@@ -17,11 +17,13 @@ user_count.times do
 end
 
 proposal_count.times do
-  Proposal.create!(summary: Faker::Hipster.paragraph, hypothesis: Faker::Hacker.say_something_smart, user_id: rand(1..user_count))
+
+  Proposal.create!(title: Faker::Hipster.word, summary: Faker::Hipster.paragraph, hypothesis: Faker::Hacker.say_something_smart, user_id: rand(1..user_count))
+
 end
 
 experiment_count.times do
-  Experiment.create!(results: Faker::Hipster.paragraph, conclusion: Faker::Hipster.paragraph, proposal_id: rand(1..proposal_count))
+  Experiment.create!(title: Faker::Hipster.sentence, results: Faker::Hipster.paragraph, conclusion: Faker::Hipster.paragraph, proposal_id: rand(1..proposal_count))
 end
 
 procedures_count.times do
