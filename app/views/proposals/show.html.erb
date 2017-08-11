@@ -1,0 +1,15 @@
+<h1><%= @proposal.title %></h1>
+<h2><%= @proposal.hypothesis %></h2>
+<p><%= @proposal.created_at %></p>
+<p><%= @proposal.summary %></p>
+
+  <ul>
+    <% @proposal.experiments.each do |experiment| %>
+      <li><%= link_to experiment.title, experiment_path(experiment) %></li>
+    <% end %>
+  </ul>
+
+
+<%= link_to "Edit", edit_proposal_path(@proposal) %>
+<%= link_to "Add experiment", new_proposal_experiment_path(@proposal) %>
+<%= link_to "Back to proposals", proposals_path%>

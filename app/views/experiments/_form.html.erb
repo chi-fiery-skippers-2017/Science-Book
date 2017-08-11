@@ -1,0 +1,19 @@
+<%= form_for @experiment, url: proposal_experiments_path(@proposal) do |f| %>
+	<% if @experiment.errors.any? %>
+		<div class="errors">
+			<b><%= pluralize(@experiment.errors.count, 'error') %> prohibited this form from being saved: </b>
+			<ul>
+				<% @experiment.errors.full_messages.each do |error| %>
+					<li><%= error %></li>
+					<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+
+	<p><%= f.submit %></p>
+<% end %>

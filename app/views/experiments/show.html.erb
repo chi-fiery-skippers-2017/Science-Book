@@ -1,0 +1,16 @@
+<div class="experiment-container">
+	<h1><%= @experiment.title %></h1>
+	<small>Submitted at: <%= @experiment.created_at.strftime('%B %d %Y') %></small>
+	<h2>Results</h2>
+	<p><%= @experiment.results %></p>
+	<h2>Conclusion</h2>
+	<p><%= @experiment.conclusion %></p>
+	<hv>
+	<!-- add link_to procedures -->
+	<button class="button">
+		<%= link_to "Back to Proposal", proposal_path(@experiment.proposal)%>
+		<%= link_to 'Procedures', experiment_procedures_path(@experiment.id) %>
+	</button>
+
+	<!-- add comments section -->
+</div>
