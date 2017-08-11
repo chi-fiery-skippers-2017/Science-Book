@@ -1,0 +1,21 @@
+<div class="proposal">
+  <div class="proposal-info">
+    <h1 id="proposal-title"><%= @proposal.title %></h1>
+    <h2 id="proposal-hypothesis"><%= @proposal.hypothesis %></h2>
+    <p id="proposal-date"><%= @proposal.created_at.strftime("%Y-%m-%d") %></p>
+    <p id="proposal-summary"><%= @proposal.summary %></p>
+  </div>
+    <ul>
+      <% @proposal.experiments.each do |experiment| %>
+      <% p experiment.proposal_id %>
+      <% p experiment.id %>
+        <li><%= link_to experiment.title, [experiment.proposal, experiment] %></li>
+      <% end %>
+    </ul>
+
+
+  <%= link_to "Edit", edit_proposal_path(@proposal) %>
+  <%= link_to "Add experiment", new_proposal_experiment_path(@proposal) %>
+  <%= link_to "Back to proposals", proposals_path%>
+
+</div>

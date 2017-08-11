@@ -1,0 +1,11 @@
+<div class="form-wraper">
+
+<%= form_for :observation, url: polymorphic_url([parent, Observation]) do |f| %>
+
+  <p><%= f.label :body %></p>
+    <p><%= f.text_area :body %></p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+</div>

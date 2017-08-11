@@ -1,0 +1,18 @@
+<div class="experiment-container">
+	<h1><%= @experiment.title %></h1>
+	<small>Submitted at: <%= @experiment.created_at.strftime('%B %d %Y') %></small>
+	<h2>Results</h2>
+	<p><%= @experiment.results %></p>
+	<h2>Conclusion</h2>
+	<p><%= @experiment.conclusion %></p>
+	<hr>
+
+	<h2>Observations</h2>
+	<%= render partial: 'observations/observation_container', locals: { parent: @experiment} %>
+	<hr>
+	<h2><%= @experiment.procedures.count %> <%= link_to 'Procedures', experiment_procedures_path(@experiment.id) %></h2>
+
+	<button class="button">
+		<%= link_to "Back to Proposal", proposal_path(@experiment.proposal)%>
+	</button>
+</div>

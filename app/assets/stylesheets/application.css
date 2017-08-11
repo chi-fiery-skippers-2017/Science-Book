@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+.procedures {
+  background-color: #eaf2ff;
+}
+
+.experiment-container {
+  background-color: #eaf2ff;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.proposal ul {
+  list-style: none;
+}
+
+.proposal {
+  border: solid 5px lightgrey;
+  padding: 2em 0 2em 0;
+  background-color: #eaf2ff;
+}
+
+#proposal-title {
+  width: 100%;
+
+}
+
+.proposal > * {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+
+.proposals {
+  font-size: 1.5em;
+}
+
+.proposals ul{
+  list-style: none;
+}
+
+.proposals li{
+  padding: 5px;
+}
+
+.proposals li:nth-child(even) {
+  background-color: #eaf2ff;
+}

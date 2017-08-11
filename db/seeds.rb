@@ -10,18 +10,20 @@ experiment_count = 100
 procedures_count = 200
 observations_count = 100
 
-User.create!(username: "Admin", email: "admin@gmail.com", password_digest: "password", role: "Admin")
+User.create!(username: "admin", email: "admin@gmail.com", password: "password", role: "admin")
 
 user_count.times do
-  User.create!(username: Faker::Internet.user_name, email:Faker::Internet.email, password_digest: "password", role: ROLES.sample)
+  User.create!(username: Faker::Internet.user_name, email:Faker::Internet.email, password: "password", role: ROLES.sample)
 end
 
 proposal_count.times do
-  Proposal.create!(summary: Faker::Hipster.paragraph, hypothesis: Faker::Hacker.say_something_smart, user_id: rand(1..user_count))
+
+  Proposal.create!(title: Faker::Hipster.word, summary: Faker::Hipster.paragraph, hypothesis: Faker::Hacker.say_something_smart, user_id: rand(1..user_count))
+
 end
 
 experiment_count.times do
-  Experiment.create!(results: Faker::Hipster.paragraph, conclusion: Faker::Hipster.paragraph, proposal_id: rand(1..proposal_count))
+  Experiment.create!(title: Faker::Hipster.sentence, results: Faker::Hipster.paragraph, conclusion: Faker::Hipster.paragraph, proposal_id: rand(1..proposal_count))
 end
 
 procedures_count.times do

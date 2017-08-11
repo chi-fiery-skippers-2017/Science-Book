@@ -1,0 +1,23 @@
+<div class="procedures">
+	<h1><%= @experiment.procedures.count %> Procedures :</h1>
+
+	<div class="procedure-container">
+
+		<% @procedures.each do |procedure| %>
+		<div class="procedure-wrapper">
+		<p><%= procedure.body %></p>
+		<small><%= procedure.created_at.strftime('%B %d %Y') %></small>
+		<small><%= procedure.username %></small>
+		<h2>Observations</h2>
+		<%= render partial: 'observations/observation_container', locals: { parent: procedure} %>
+		</div>
+		<%= render partial: 'observations/observation_container', locals: {parent: procedure} %>
+		<% end %>
+	</div>
+	<h3>Add a Procedure:</h3>
+
+	<%= render 'procedures/form' %>
+	<hr>
+	<%= link_to "Back to experiment", experiment_path(@experiment)%>
+</div>
+	<!-- add comments section -->

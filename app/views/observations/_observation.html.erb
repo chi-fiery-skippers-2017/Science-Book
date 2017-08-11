@@ -1,0 +1,10 @@
+<div class="observation-wrapper">
+  <hr>
+  <p class="body">
+  <%= observation.body %>
+  </p>
+
+  <small> Written by <b> <%= observation.user.username %></b> on <%= observation.created_at.strftime("%B %d %Y") %></small>
+
+   <!-- render partial: 'comments/comment_container', locals: {parent: observation}  -->
+</div>

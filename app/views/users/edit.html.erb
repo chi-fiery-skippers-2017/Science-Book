@@ -1,0 +1,25 @@
+<%= render 'partials/user_errors', object: @user %>
+
+<%= form_for :user, url: users_path do |f| %>
+
+  <div>
+    <%= f.label :username, "Username" %>
+    <%= f.text_field :username, placeholder:@user.username %>
+  </div>
+  <div>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, placeholder: "password" %>
+  </div>
+  <div>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email, placeholder:@user.email %>
+  </div>
+  <div>
+    <%= f.label :role, "Role" %>
+    <%= f.select :role, ["admin", "faculty", "scientist"], prompt: "-----"%>
+  </div>
+  <div>
+    <%= f.submit "Submit", value: "Update Account" %>
+  </div>
+
+<% end %>
